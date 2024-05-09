@@ -34,7 +34,7 @@ const main = () => {
         </form>
       </div>
 
-      <ul className="bg-white flex flex-col gap-y-5 overflow-y-scroll p-3 rounded">
+      <ul className="bg-white min-h-96 flex flex-col gap-y-5 overflow-y-scroll p-3 rounded">
         {todoList &&
           todoList.map((task, index) => (
             <li key={index} className="flex gap-5">
@@ -42,6 +42,16 @@ const main = () => {
               <p>{task}</p>
             </li>
           ))}
+
+        <div className="flex justify-between mt-auto">
+          <div>{5} items left</div>
+          <div className="hidden lg:flex justify-between">
+            <div>All</div>
+            <div>Active</div>
+            <div>Completed</div>
+          </div>
+          <div>Clear Completed</div>
+        </div>
       </ul>
     </main>
   );

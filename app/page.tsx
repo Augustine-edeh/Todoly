@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-import Main from "@/components/main";
+import Main from "@/components/Main";
+import Filter from "@/components/Filter";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
           </header>
 
           <Main />
+          <Filter />
         </div>
       </section>
     </div>
