@@ -1,6 +1,6 @@
-const Filter = () => {
+const Filter = ({ className }) => {
   return (
-    <div className="lg:hidden bg-lime-500 rounded">
+    <div className={`${className}`}>
       <div className="flex justify-center gap-x-6">
         <button type="button">All</button>
         <button type="button">Active</button>

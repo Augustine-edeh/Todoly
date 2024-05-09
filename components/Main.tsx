@@ -1,10 +1,10 @@
 "use client";
-import { log } from "console";
-import Image from "next/image";
 
 import { useState } from "react";
 
-const main = () => {
+import Filter from "./Filter";
+
+const Main = () => {
   const [todoList, setTodoList] = useState([]);
   const [newTask, setNewTask] = useState();
 
@@ -45,11 +45,7 @@ const main = () => {
 
         <div className="flex justify-between mt-auto">
           <div>{5} items left</div>
-          <div className="hidden lg:flex justify-between">
-            <div>All</div>
-            <div>Active</div>
-            <div>Completed</div>
-          </div>
+          <Filter className={"hidden lg:block"} />
           <div>Clear Completed</div>
         </div>
       </ul>
@@ -57,4 +53,4 @@ const main = () => {
   );
 };
 
-export default main;
+export default Main;
