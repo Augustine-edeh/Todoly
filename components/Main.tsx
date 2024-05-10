@@ -28,7 +28,7 @@ const Main = () => {
           <input
             type="text"
             className="w-full rounded py-3 px-5 outline-none bg-very-light-gray-Lfsdl dark:bg-very-dark-desaturated-blue-D text-red-300 text-lg"
-            placeholder="Create a new todo..."
+            placeholder=" Create a new todo..."
             onChange={changeHandler}
             value={newTask}
           />
