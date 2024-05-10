@@ -18,7 +18,7 @@ export default function Home() {
       </section>
 
       {/* Bottom section */}
-      <section className="flex bg-sky-400/80 h-2/3">
+      <section className="flex bg-very-light-grayish-blue-L dark:bg-very-bark-blue-D h-2/3">
         <div className="mx-auto w-[21rem] sm:w-[30rem] md:w-[60rem] flex flex-col gap-y-10 -mt-48">
           <header className="flex justify-between items-center text-white">
             <h1 className="font-bold">TODO</h1>
@@ -34,7 +34,11 @@ export default function Home() {
 
           <Main />
 
-          <Filter className={"lg:hidden bg-white rounded p-3"} />
+          <Filter
+            className={
+              "lg:hidden bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D rounded p-3"
+            }
+          />
         </div>
       </section>
     </div>
