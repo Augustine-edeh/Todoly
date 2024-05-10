@@ -52,7 +52,7 @@ const Main = () => {
               ? `${todoList.length} items left`
               : "No item left"}
           </div>
-          <Filter className={"hidden lg:block"} />
+          <Filter className={"hidden md:block"} />
           <div>Clear Completed</div>
         </div>
       </ul>

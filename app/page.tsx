@@ -36,7 +36,7 @@ export default function Home() {
 
           <Filter
             className={
-              "lg:hidden bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D rounded p-3"
+              "md:hidden bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D rounded p-3"
             }
           />
         </div>
