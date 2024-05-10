@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import Main from "@/components/Main";
 import Filter from "@/components/Filter";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -39,6 +40,7 @@ export default function Home() {
               "md:hidden bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D rounded p-3"
             }
           />
+          <Footer />
         </div>
       </section>
     </div>
