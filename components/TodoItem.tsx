@@ -1,8 +1,8 @@
 const TodoItem = ({ index, task }) => {
   return (
     <li key={index} className="flex gap-5">
-      <input type="checkbox" className="" />
-      <p>{task}</p>
+      <input type="checkbox" className="" id={index} />
+      <label htmlFor={index}>{task}</label>
     </li>
   );
 };
