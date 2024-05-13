@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import Filter from "./Filter";
+import TodoItem from "./TodoItem";
 
 const Main = () => {
   const [todoList, setTodoList] = useState([]);
@@ -37,12 +38,7 @@ const Main = () => {
 
       <ul className="bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 flex flex-col gap-y-5 overflow-y-scroll p-3 rounded">
         {todoList &&
-          todoList.map((task, index) => (
-            <li key={index} className="flex gap-5">
-              <input type="radio" />
-              <p>{task}</p>
-            </li>
-          ))}
+          todoList.map((task, index) => <TodoItem index={index} task={task} />)}
 
         <div className="flex justify-between mt-auto text-dark-grayish-blue-D">
           <div>
