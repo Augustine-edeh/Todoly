@@ -13,7 +13,8 @@ const config: Config = {
       },
       colors: {
         "bright-blue": "hsl(220, 98%, 61%)",
-        "check-bg": "linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)",
+        "check-from_colour": "hsl(192, 100%, 67%)",
+        "check-to_colour": "hsl(280, 87%, 65%)",
 
         // Light Theme
         "very-light-gray-L": "hsl(0, 0%, 98%)",
