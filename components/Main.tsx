@@ -18,7 +18,8 @@ const Main = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    setTodoList([newTask, ...todoList]);
+    // add condition: don't add newTask if input value is empty
+    newTask.length > 1 ? setTodoList([newTask, ...todoList]) : "";
     setNewTask("");
   };
 
