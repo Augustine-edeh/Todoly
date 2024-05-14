@@ -8,15 +8,7 @@ export default function Home() {
   return (
     <div className="flex flex-col h-screen">
       {/* Top section (background-image section) */}
-      <section className="h-1/3">
-        <Image
-          src={"/bg-mobile-light.jpg"}
-          width={500}
-          height={500}
-          alt="bg-image"
-          className="bg-red-400 h-full  bg-[url('/bg-mobile-light.jpg')] w-full"
-        />
-      </section>
+      <section className="h-1/3 bg-[url('/bg-mobile-light.jpg')] dark:bg-[url('/bg-mobile-dark.jpg')] lg:bg-[url('/bg-desktop-light.jpg')] lg:dark:bg-[url('/bg-desktop-dark.jpg')] bg-no-repeat bg-cover"></section>
 
       {/* Bottom section */}
       <section className="flex bg-very-light-grayish-blue-L dark:bg-very-bark-blue-D h-2/3">
