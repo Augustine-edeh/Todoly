@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-import Filter from "./Filter";
 import TodoItem from "./TodoItem";
+import InfoPanel from "./InfoPanel";
 
 const Main = () => {
   const [todoList, setTodoList] = useState([]);
@@ -24,35 +24,29 @@ const Main = () => {
   };
 
   return (
-    <main className="flex flex-col gap-y-10 text-black dark:text-white">
-      <div>
-        <form onSubmit={submitHandler}>
-          <input
-            type="text"
-            className="w-full rounded py-3 px-5 outline-none bg-very-light-gray-Lfsdl dark:bg-very-dark-desaturated-blue-D text-red-300 text-lg"
-            placeholder=" Create a new todo..."
-            onChange={changeHandler}
-            value={newTask}
-          />
-        </form>
-      </div>
-
-      <ul className="bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 flex flex-col gap-y-5 overflow-y-scroll p-3 rounded">
-        {todoList &&
-          todoList.map((task, index) => <TodoItem index={index} task={task} />)}
-
-        <div className="flex justify-between mt-auto text-dark-grayish-blue-D">
-          <div>
-            {todoList.length === 1
-              ? "1 item left"
-              : todoList.length > 1
-              ? `${todoList.length} items left`
-              : "No item left"}
-          </div>
-          <Filter className={"hidden md:block"} />
-          <div>Clear Completed</div>
+    <main className="text-black dark:text-white">
+      <section className="flex flex-col gap-y-10">
+        <div>
+          <form onSubmit={submitHandler}>
+            <input
+              type="text"
+              className="w-full rounded py-3 px-5 outline-none bg-very-light-gray-Lfsdl dark:bg-very-dark-desaturated-blue-D text-red-300 text-lg border-0"
+              placeholder=" Create a new todo..."
+              onChange={changeHandler}
+              value={newTask}
+            />
+          </form>
         </div>
-      </ul>
+
+        {/* <ul className="overflow-hidden bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 p-3 rounded-t "> */}
+        <ul className="bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 flex flex-col gap-y-5 overflow-auto p-3 rounded-t">
+          {todoList &&
+            todoList.map((task, index) => (
+              <TodoItem index={index} task={task} />
+            ))}
+        </ul>
+      </section>
+      <InfoPanel todoList={todoList} />
     </main>
   );
 };
