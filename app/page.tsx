@@ -14,7 +14,7 @@ export default function Home() {
       <section className="flex bg-very-light-grayish-blue-L dark:bg-very-bark-blue-D h-2/3">
         <div className="mx-auto w-[21rem] sm:w-[30rem] md:w-[43rem] lg:w-[50rem] flex flex-col gap-y-10 -mt-48">
           <header className="flex justify-between items-center text-white">
-            <h1 className="font-bold">TODO</h1>
+            <h1 className="font-bold text-3xl">TODO</h1>
             <button type="button">
               <Image
                 src={"./icon-moon.svg"}
