@@ -9,7 +9,7 @@ const TodoItem = ({ index, task }) => {
         type="checkbox"
         id={index}
         className="relative peer
-     w-5 h-5 rounded-full bg-transparent shrink-0 checked:bg-gradient-to-br from-check-from_colour to-check-to_colour"
+     w-6 h-6 rounded-full bg-transparent shrink-0 checked:bg-gradient-to-br from-check-from_colour to-check-to_colour"
       />
 
       {/* <svg
@@ -33,9 +33,7 @@ const TodoItem = ({ index, task }) => {
         xmlns="http://www.w3.org/2000/svg"
         width="11"
         height="9"
-        // className="absolute bg-yellow-300 h-5
-        // w-5 roundefull"
-        // className='absolute hidden peer-checked:block'
+        className="absolute left-[22px] hidden peer-checked:block rounded-full"
       >
         <path
           fill="none"
