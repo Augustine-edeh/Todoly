@@ -19,7 +19,7 @@ const Main = () => {
     e.preventDefault();
 
     // add condition: don't add newTask if input value is empty
-    newTask.length > 1 ? setTodoList([newTask, ...todoList]) : "";
+    newTask.length > 0 ? setTodoList([newTask, ...todoList]) : "";
     setNewTask("");
   };
 
