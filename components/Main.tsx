@@ -39,7 +39,7 @@ const Main = () => {
         </div>
 
         {/* <ul className="overflow-hidden bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 p-3 rounded-t "> */}
-        <ul className="bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 flex flex-col gap-y-5 overflow-auto p-3 rounded-t">
+        <ul className="bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 flex flex-col gap-y-5 overflow-auto p-3 rounded-t scrollbar-thin scrollbar-track-very-dark-desaturated-blue-D scrollbar-thumb-slate-700/80">
           {todoList &&
             todoList.map((task, index) => (
               <TodoItem index={index} task={task} />
