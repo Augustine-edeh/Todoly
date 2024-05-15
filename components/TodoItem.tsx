@@ -1,12 +1,15 @@
 const TodoItem = ({ index, task }) => {
   return (
-    <li key={index} className="flex gap-5 items-center">
+    <li
+      key={index}
+      className="flex gap-x-5 items-center border-b-[1px] border-very-dark-grayish-blue-L px-4 py-5"
+    >
       {/* <input type="checkbox" className="" id={index} /> */}
       <input
         type="checkbox"
         id={index}
         className="relative peer
-     w-5 h-5 rounded-full bg-white shrink-0 checked:bg-gradient-to-br from-check-from_colour to-check-to_colour"
+     w-5 h-5 rounded-full bg-transparent shrink-0 checked:bg-gradient-to-br from-check-from_colour to-check-to_colour"
       />
 
       {/* <svg
