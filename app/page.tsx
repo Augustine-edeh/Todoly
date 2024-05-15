@@ -12,8 +12,8 @@ export default function Home() {
 
       {/* Bottom section */}
       <section className="flex bg-very-light-grayish-blue-L dark:bg-very-bark-blue-D h-2/3">
-        <div className="mx-auto w-[21rem] sm:w-[30rem] md:w-[43rem] lg:w-[50rem] flex flex-col gap-y-10 -mt-48">
-          <header className="flex justify-between items-center text-white">
+        <div className="mx-auto w-[21rem] sm:w-[30rem] md:w-[43rem] lg:w-[50rem] flex flex-col sm:gap-y-10 -mt-48">
+          <header className="flex justify-between items-center text-white mb-10 sm:mb-0">
             <h1 className="font-bold text-3xl">TODO</h1>
             <button type="button">
               <Image
@@ -29,7 +29,7 @@ export default function Home() {
 
           <Filter
             className={
-              "md:hidden bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D rounded p-3"
+              "md:hidden bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D rounded p-3 my-5 sm:my-0"
             }
           />
           <Footer />
