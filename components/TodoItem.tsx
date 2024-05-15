@@ -9,7 +9,7 @@ const TodoItem = ({ index, task }) => {
         type="checkbox"
         id={index}
         className="relative peer
-     w-6 h-6 rounded-full bg-transparent shrink-0 checked:bg-gradient-to-br from-check-from_colour to-check-to_colour"
+     w-6 h-6 rounded-full bg-transparent shrink-0 checked:bg-gradient-to-br from-check-from_colour to-check-to_colour cursor-pointer"
       />
 
       {/* <svg
@@ -33,7 +33,7 @@ const TodoItem = ({ index, task }) => {
         xmlns="http://www.w3.org/2000/svg"
         width="11"
         height="9"
-        className="absolute left-[22px] hidden peer-checked:block rounded-full"
+        className="absolute left-[22px] hidden peer-checked:block rounded-full cursor-pointer"
       >
         <path
           fill="none"
@@ -48,7 +48,7 @@ const TodoItem = ({ index, task }) => {
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
-        className="absolute right-5"
+        className="absolute right-5 cursor-pointer"
       >
         <path
           fill="#494C6B"
@@ -57,7 +57,9 @@ const TodoItem = ({ index, task }) => {
         />
       </svg>
 
-      <label htmlFor={index}>{task}</label>
+      <label htmlFor={index} className="cursor-pointer">
+        {task}
+      </label>
     </li>
   );
 };
