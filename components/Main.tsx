@@ -7,12 +7,10 @@ import InfoPanel from "./InfoPanel";
 import { useCounterStore } from "@/store/store";
 
 const Main = () => {
-  // const [todoList, setTodoList] = useState([]);
   const [newTask, setNewTask] = useState();
 
   const todoArray = useCounterStore((state) => state.todoArray);
   const updateTodoArray = useCounterStore((state) => state.updateTodoArray);
-  // const increment = useCounterStore((state) => state.increment);
 
   const changeHandler = (e) => {
     e.preventDefault();
@@ -26,10 +24,6 @@ const Main = () => {
     // updating todoArray (Zustand)
     newTask.trim().length > 0 ? updateTodoArray(newTask) : "";
 
-    // updateTodoArray();
-
-    // add condition: don't add newTask if input value is empty
-    newTask.trim().length > 0 ? setTodoList([newTask, ...todoList]) : "";
     setNewTask("");
   };
 
