@@ -30,7 +30,6 @@ export default function Home() {
                 width={30}
                 height={30}
                 alt="theme icon"
-                onClick={() => console.log(todoArray)}
               />
             </button>
           </header>

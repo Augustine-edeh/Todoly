@@ -10,10 +10,12 @@ type TodoStore = {
   //   incrementAsync: () => Promise<void>;
   //   decrement: () => void;
 };
+
 export const useTodoStore = create<TodoStore>((set) => ({
   //   count: 0,
   todoArray: [],
   newTask: "",
+  // FIXME: incorrect state updating logic here
   setNewTask: (task) => {
     set((state) => ({ newTask: task }));
   },
