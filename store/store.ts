@@ -3,6 +3,8 @@ import { create } from "zustand";
 type CounterStore = {
   count: number;
   todoArray: Array<string>;
+  newTask: string;
+  setNewTask: (task: string) => void;
   updateTodoArray: (task: string) => void;
   increment: () => void;
   incrementAsync: () => Promise<void>;
@@ -11,6 +13,10 @@ type CounterStore = {
 export const useCounterStore = create<CounterStore>((set) => ({
   count: 0,
   todoArray: [],
+  newTask: "",
+  setNewTask: (task) => {
+    set((state) => ({ newTask: task }));
+  },
   updateTodoArray: (task) => {
     set((state) => ({
       todoArray: [task, ...state.todoArray],
