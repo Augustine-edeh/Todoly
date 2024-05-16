@@ -63,7 +63,7 @@ const Main = () => {
             ))}
         </ul>
       </section>
-      <InfoPanel todoList={todoArray} />
+      <InfoPanel />
     </main>
   );
 };
