@@ -59,7 +59,7 @@ const Main = () => {
           {todoArray.length}
           {todoArray &&
             todoArray.map((task, index) => (
-              <TodoItem index={index} task={task} />
+              <TodoItem key={index} index={index} task={task} />
             ))}
         </ul>
       </section>

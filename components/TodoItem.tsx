@@ -1,9 +1,6 @@
 const TodoItem = ({ index, task }) => {
   return (
-    <li
-      key={index}
-      className="relative flex gap-x-5 items-center border-b-[1px] border-very-dark-grayish-blue-L px-4 py-5"
-    >
+    <li className="relative flex gap-x-5 items-center border-b-[1px] border-very-dark-grayish-blue-L px-4 py-5">
       {/* <input type="checkbox" className="" id={index} /> */}
       <input
         type="checkbox"
