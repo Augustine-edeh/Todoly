@@ -7,7 +7,7 @@ import InfoPanel from "./InfoPanel";
 import { useCounterStore } from "@/store/store";
 
 const Main = () => {
-  const [newTask, setNewTask] = useState();
+  const [newTask, setNewTask] = useState("");
 
   const todoArray = useCounterStore((state) => state.todoArray);
   const updateTodoArray = useCounterStore((state) => state.updateTodoArray);
