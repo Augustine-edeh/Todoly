@@ -12,14 +12,14 @@ const Main = () => {
   const changeHandler = (e) => {
     e.preventDefault();
 
-    setNewTask(() => e.target.value.trim());
+    setNewTask(() => e.target.value);
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     // add condition: don't add newTask if input value is empty
-    newTask.length > 0 ? setTodoList([newTask, ...todoList]) : "";
+    newTask.trim().length > 0 ? setTodoList([newTask, ...todoList]) : "";
     setNewTask("");
   };
 
