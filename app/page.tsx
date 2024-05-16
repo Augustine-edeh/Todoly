@@ -5,29 +5,17 @@ import Main from "@/components/Main";
 import Filter from "@/components/Filter";
 import Footer from "@/components/Footer";
 
-import { useCounterStore } from "@/store/store";
+import { useTodoStore } from "@/store/todoStore";
 
 export default function Home() {
-  const count = useCounterStore((state) => state.count);
-  const increment = useCounterStore((state) => state.increment);
-  const incrementAsync = useCounterStore((state) => state.incrementAsync);
-  const decrement = useCounterStore((state) => state.decrement);
-  const todoArray = useCounterStore((state) => state.todoArray);
+  // const count = useTodoStore((state) => state.count);
+  // const increment = useTodoStore((state) => state.increment);
+  // const incrementAsync = useTodoStore((state) => state.incrementAsync);
+  // const decrement = useTodoStore((state) => state.decrement);
+  const todoArray = useTodoStore((state) => state.todoArray);
 
   return (
     <div className="flex flex-col h-screen">
-      <div>
-        {count}
-        <div>
-          <button onClick={incrementAsync} className="">
-            Increment
-          </button>
-          <button onClick={decrement} className="">
-            Decrement
-          </button>
-        </div>
-      </div>
-
       {/* Top section (background-image section) */}
       <section className="h-1/3 bg-[url('/bg-mobile-light.jpg')] dark:bg-[url('/bg-mobile-dark.jpg')] lg:bg-[url('/bg-desktop-light.jpg')] lg:dark:bg-[url('/bg-desktop-dark.jpg')] bg-no-repeat bg-cover"></section>
 
