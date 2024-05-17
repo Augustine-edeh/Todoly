@@ -1,6 +1,6 @@
 const Filter = ({ className }) => {
   return (
-    <div className={`${className} text-dark-grayish-blue-D`}>
+    <div className={`${className} text-dark-grayish-blue-D select-none`}>
       <div className="flex justify-center gap-x-6">
         <button
           type="button"
