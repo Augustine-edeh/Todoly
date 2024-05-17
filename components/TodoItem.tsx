@@ -1,14 +1,19 @@
 const TodoItem = ({ index, task }) => {
   return (
-    <li className="relative flex gap-x-5 items-center border-b-[1px] border-very-dark-grayish-blue-L px-4 py-5">
+    <li className="relative flex gap-x-5 items-center border-b-[1px] border-very-dark-grayish-blue-L px-4 py-5 select-none">
       {/* <input type="checkbox" className="" id={index} /> */}
       <input
         type="checkbox"
         id={index}
         className="relative peer
-     w-6 h-6 rounded-full bg-transparent shrink-0 checked:bg-gradient-to-br from-check-from_colour to-check-to_colour cursor-pointer"
+     w-6 h-6 rounded-full bg-transparent shrink-0 checked:bg-gradient-to-br from-check-from_colour to-check-to_colour cursor-pointer hover:border-[#9c57ff]"
       />
-
+      <label
+        htmlFor={index}
+        className="cursor-pointer peer-checked:line-through  peer-checked:text-very-dark-grayish-blue-D"
+      >
+        {task}
+      </label>
       {/* <svg
         className="
       absolute 
@@ -53,10 +58,6 @@ const TodoItem = ({ index, task }) => {
           d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
         />
       </svg>
-
-      <label htmlFor={index} className="cursor-pointer">
-        {task}
-      </label>
     </li>
   );
 };
