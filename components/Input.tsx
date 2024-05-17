@@ -1,12 +1,12 @@
 "use client";
-import { useState } from "react";
 
+import { useState } from "react";
 import { useTodoStore } from "@/store/todoStore";
 
 const Input = () => {
   const [newTask, setNewTask] = useState("");
 
-  const todoArray = useTodoStore((state) => state.todoArray);
+  //   const todoArray = useTodoStore((state) => state.todoArray);
   const updateTodoArray = useTodoStore((state) => state.updateTodoArray);
 
   const changeHandler = (e) => {
