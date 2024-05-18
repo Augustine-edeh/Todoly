@@ -4,37 +4,41 @@ import { useState } from "react";
 import { useTodoStore } from "@/store/todoStore";
 
 const Input = () => {
-  const [newTask, setNewTask] = useState("");
+  const newTaskk = useTodoStore((state) => state.newTask);
+  const setNewTaskk = useTodoStore((state) => state.setNewTask);
+
+  // const [newTask, setNewTask] = useState("");
 
   //   const todoArray = useTodoStore((state) => state.todoArray);
   const updateTodoArray = useTodoStore((state) => state.updateTodoArray);
 
   const changeHandler = (e) => {
-    e.preventDefault();
-
-    setNewTask(() => e.target.value);
+    // e.preventDefault();
+    // setNewTask(() => e.target.value);
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     // updating todoArray (Zustand)
-    newTask.trim().length > 0 ? updateTodoArray(newTask) : "";
+    // newTaskk.trim().length > 0 ? updateTodoArray(newTask) : "";
 
-    setNewTask("");
+    // setNewTask("");
   };
 
   return (
     <form
-      onSubmit={submitHandler}
+      onSubmit={(e) => {
+        e.preventDefault(), updateTodoArray();
+      }}
       className="relative flex items-center bg-very-light-gray-Lfsdl dark:bg-very-dark-desaturated-blue-D"
     >
       <input
         type="text"
         className="relative w-full rounded py-3 px-5 outline-none bg-very-light-gray-Lfsdl dark:bg-very-dark-desaturated-blue-D text-red-300 text-lg border-0 peer"
         placeholder=" Create a new todo..."
-        onChange={changeHandler}
-        value={newTask}
+        onChange={(e) => setNewTaskk(e.target.value)}
+        value={newTaskk}
         id="input"
       />
 

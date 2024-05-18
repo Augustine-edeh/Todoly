@@ -1,11 +1,18 @@
 import { create } from "zustand";
 
+// types.ts
+interface Todo {
+  id: number;
+  task: string;
+  completed: boolean;
+}
+
 type TodoStore = {
   //   count: number;
-  todoArray: Array<string>;
+  todoArray: Todo[];
   newTask: string;
   setNewTask: (task: string) => void;
-  updateTodoArray: (task: string) => void;
+  updateTodoArray: () => void;
   deleteTask: (index: number) => void;
   //   increment: () => void;
   //   incrementAsync: () => Promise<void>;
@@ -17,14 +24,17 @@ export const useTodoStore = create<TodoStore>((set) => ({
   todoArray: [],
   newTask: "",
   // FIXME: incorrect state updating logic here
-  setNewTask: (task) => {
-    set((state) => ({ newTask: task }));
-  },
-  updateTodoArray: (task) => {
-    set((state) => ({
-      todoArray: [task, ...state.todoArray],
-    }));
-  },
+  setNewTask: (task: string) => set({ newTask: task }),
+  updateTodoArray: () =>
+    set((state) => {
+      if (state.newTask.trim() === "") return state;
+      const newTodo: Todo = {
+        id: Date.now(),
+        task: state.newTask,
+        completed: false,
+      };
+      return { todoArray: [newTodo, ...state.todoArray], newTask: "" };
+    }),
   deleteTask: (index) =>
     set((state) => ({
       todoArray: state.todoArray.filter((_, i) => i !== index),

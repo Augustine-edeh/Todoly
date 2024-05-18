@@ -1,6 +1,6 @@
 import { useTodoStore } from "@/store/todoStore";
 
-const TodoItem = ({ index, task }) => {
+const TodoItem = ({ index, task, isChecked }) => {
   const deleteTask = useTodoStore((state) => state.deleteTask);
 
   // const deleteTaskHandler = () => {};
@@ -13,12 +13,13 @@ const TodoItem = ({ index, task }) => {
         id={index}
         className="relative peer
      w-6 h-6 rounded-full bg-transparent shrink-0 checked:bg-gradient-to-br from-check-from_colour to-check-to_colour cursor-pointer hover:border-[#9c57ff]"
+        checked={false}
       />
       <label
         htmlFor={index}
         className="cursor-pointer peer-checked:line-through  peer-checked:text-very-dark-grayish-blue-D"
       >
-        {task}
+        {task.task}
       </label>
       {/* <svg
         className="
