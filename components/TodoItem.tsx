@@ -1,4 +1,10 @@
+import { useTodoStore } from "@/store/todoStore";
+
 const TodoItem = ({ index, task }) => {
+  const deleteTask = useTodoStore((state) => state.deleteTask);
+
+  // const deleteTaskHandler = () => {};
+
   return (
     <li className="relative flex gap-x-5 items-center border-b-[1px] border-very-dark-grayish-blue-L px-4 py-5 select-none">
       {/* <input type="checkbox" className="" id={index} /> */}
@@ -51,6 +57,7 @@ const TodoItem = ({ index, task }) => {
         width="16"
         height="16"
         className="absolute right-5 cursor-pointer"
+        onClick={() => deleteTask(index)}
       >
         <path
           fill="#494C6B"
