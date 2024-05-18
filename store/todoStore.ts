@@ -4,7 +4,7 @@ import { create } from "zustand";
 interface Todo {
   id: number;
   task: string;
-  completed: boolean;
+  isCompleted: boolean;
 }
 
 type TodoStore = {
@@ -31,7 +31,7 @@ export const useTodoStore = create<TodoStore>((set) => ({
       const newTodo: Todo = {
         id: Date.now(),
         task: state.newTask,
-        completed: false,
+        isCompleted: false,
       };
       return { todoArray: [newTodo, ...state.todoArray], newTask: "" };
     }),
