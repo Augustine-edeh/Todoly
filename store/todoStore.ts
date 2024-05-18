@@ -14,6 +14,7 @@ type TodoStore = {
   setNewTask: (task: string) => void;
   updateTodoArray: () => void;
   deleteTask: (index: number) => void;
+  toggleIsCompleted: (id: number) => void;
   //   increment: () => void;
   //   incrementAsync: () => Promise<void>;
   //   decrement: () => void;
@@ -38,6 +39,12 @@ export const useTodoStore = create<TodoStore>((set) => ({
   deleteTask: (index) =>
     set((state) => ({
       todoArray: state.todoArray.filter((_, i) => i !== index),
+    })),
+  toggleIsCompleted: (id: number) =>
+    set((state) => ({
+      todoArray: state.todoArray.map((todo) =>
+        todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
+      ),
     })),
 
   //   increment: () => {
