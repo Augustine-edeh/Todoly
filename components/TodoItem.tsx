@@ -1,8 +1,13 @@
 import { useTodoStore } from "@/store/todoStore";
 
-const TodoItem = ({ index, task, isChecked }) => {
-  const deleteTask = useTodoStore((state) => state.deleteTask);
+type todoItem = {
+  index: number;
+  todo: object;
+  isCompleted: boolean;
+};
 
+const TodoItem = ({ index, todo, isCompleted }: todoItem) => {
+  const deleteTask = useTodoStore((state) => state.deleteTask);
   // const deleteTaskHandler = () => {};
 
   return (
@@ -10,16 +15,16 @@ const TodoItem = ({ index, task, isChecked }) => {
       {/* <input type="checkbox" className="" id={index} /> */}
       <input
         type="checkbox"
-        id={index}
+        id={String(index)}
         className="relative peer
      w-6 h-6 rounded-full bg-transparent shrink-0 checked:bg-gradient-to-br from-check-from_colour to-check-to_colour cursor-pointer hover:border-[#9c57ff]"
-        checked={false}
+        checked={isCompleted}
       />
       <label
-        htmlFor={index}
+        htmlFor={String(index)}
         className="cursor-pointer peer-checked:line-through  peer-checked:text-very-dark-grayish-blue-D"
       >
-        {task.task}
+        {todo.task}
       </label>
       {/* <svg
         className="
