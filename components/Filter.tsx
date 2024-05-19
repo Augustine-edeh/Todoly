@@ -1,6 +1,9 @@
 import { useTodoStore } from "../store/todoStore";
 
-const Filter = ({ className }) => {
+interface FilterProps {
+  className: string;
+}
+const Filter = ({ className }: FilterProps) => {
   // import { useTodoStore } from '../store';
 
   // const { filter, setFilter, clearCompleted } = useTodoStore();
