@@ -3,7 +3,7 @@ import Image from "next/image";
 const Header = () => {
   return (
     <header className="flex justify-between items-center text-white mb-10 sm:mb-0">
-      <h1 className="font-bold text-3xl">TODO</h1>
+      <h1 className="font-bold text-3xl">TODOLY</h1>
       <button type="button" className="rounded-full p-1">
         <Image
           src={"./icon-moon.svg"}
