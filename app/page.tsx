@@ -1,12 +1,7 @@
-"use client";
-import Image from "next/image";
-
 import Header from "@/components/Header";
 import Main from "@/components/Main";
 import Filter from "@/components/Filter";
 import Footer from "@/components/Footer";
-
-import { useTodoStore } from "@/store/todoStore";
 
 export default function Home() {
   return (
