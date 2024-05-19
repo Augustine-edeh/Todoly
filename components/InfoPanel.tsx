@@ -3,6 +3,7 @@ import Filter from "./Filter";
 
 const InfoPanel = () => {
   const todoArray = useTodoStore((state) => state.todoArray);
+  const clearCompleted = useTodoStore((state) => state.clearCompleted);
 
   const unCompletedTaskCount = todoArray.filter(
     (todo) => todo.isCompleted === false
@@ -20,7 +21,10 @@ const InfoPanel = () => {
 
       <Filter className={"hidden md:block"} />
 
-      <div className="cursor-pointer hover:text-light-grayish-blue-D_">
+      <div
+        className="cursor-pointer hover:text-light-grayish-blue-D_"
+        onClick={clearCompleted}
+      >
         Clear Completed
       </div>
     </div>
