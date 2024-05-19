@@ -10,7 +10,6 @@ interface Todo {
 }
 
 type TodoStore = {
-  //   count: number;
   todoArray: Todo[];
   newTask: string;
   filter: Filter;
@@ -20,14 +19,9 @@ type TodoStore = {
   toggleIsCompleted: (id: number) => void;
   setFilter: (filter: Filter) => void;
   clearCompleted: () => void;
-
-  //   increment: () => void;
-  //   incrementAsync: () => Promise<void>;
-  //   decrement: () => void;
 };
 
 export const useTodoStore = create<TodoStore>((set) => ({
-  //   count: 0,
   todoArray: [],
   newTask: "",
   filter: "all",
@@ -58,17 +52,4 @@ export const useTodoStore = create<TodoStore>((set) => ({
     set((state) => ({
       todoArray: state.todoArray.filter((todo) => !todo.isCompleted),
     })),
-
-  //   increment: () => {
-  //     set((state) => ({ count: state.count + 1 }));
-  //   },
-
-  //   incrementAsync: async () => {
-  //     await new Promise((resolve) => setTimeout(resolve, 1000));
-  //     set((state) => ({ count: state.count + 1 }));
-  //   },
-
-  //   decrement: () => {
-  //     set((state) => ({ count: state.count - 1 }));
-  //   },
 }));

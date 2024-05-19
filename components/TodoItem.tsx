@@ -5,19 +5,16 @@ type todoItem = {
   index: number;
   todo: { id: number; task: string; isCompleted: boolean };
   isCompleted: boolean;
-  // id: number;
 };
 
 const TodoItem = ({ index, todo, isCompleted }: todoItem) => {
   const deleteTask = useTodoStore((state) => state.deleteTask);
   const toggleIsCompleted = useTodoStore((state) => state.toggleIsCompleted);
-  // const deleteTaskHandler = () => {};
 
   const handleCheckChange = (e: React.FormEvent) => {};
 
   return (
     <li className="relative flex gap-x-5 items-center border-b-[1px] border-very-dark-grayish-blue-L px-4 py-5 select-none">
-      {/* <input type="checkbox" className="" id={index} /> */}
       <input
         type="checkbox"
         id={String(index)}
@@ -25,7 +22,6 @@ const TodoItem = ({ index, todo, isCompleted }: todoItem) => {
      w-6 h-6 rounded-full bg-transparent shrink-0 checked:bg-gradient-to-br from-check-from_colour to-check-to_colour cursor-pointer hover:border-[#9c57ff]"
         checked={isCompleted}
         onChange={() => toggleIsCompleted(todo.id)}
-        // onChange={handleCheckChange}
       />
       <label
         htmlFor={String(index)}
@@ -33,21 +29,6 @@ const TodoItem = ({ index, todo, isCompleted }: todoItem) => {
       >
         {todo.task}
       </label>
-      {/* <svg
-        className="
-      absolute 
-      w-5 h-5
-      hidden peer-checked:block"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polyline points="20 6 9 17 4 12"></polyline>
-      </svg> */}
 
       {/* tick icon */}
       <svg

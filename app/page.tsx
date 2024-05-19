@@ -9,12 +9,6 @@ import Footer from "@/components/Footer";
 import { useTodoStore } from "@/store/todoStore";
 
 export default function Home() {
-  // const count = useTodoStore((state) => state.count);
-  // const increment = useTodoStore((state) => state.increment);
-  // const incrementAsync = useTodoStore((state) => state.incrementAsync);
-  // const decrement = useTodoStore((state) => state.decrement);
-  // const todoArray = useTodoStore((state) => state.todoArray);
-
   return (
     <div className="flex flex-col h-screen">
       {/* Top section (background-image section) */}

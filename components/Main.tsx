@@ -31,7 +31,6 @@ const Main = () => {
                 index={index}
                 todo={todo}
                 isCompleted={todo.isCompleted}
-                // id={todo.id}
               />
             ))}
         </ul>

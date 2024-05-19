@@ -7,24 +7,7 @@ const Input = () => {
   const newTaskk = useTodoStore((state) => state.newTask);
   const setNewTaskk = useTodoStore((state) => state.setNewTask);
 
-  // const [newTask, setNewTask] = useState("");
-
-  //   const todoArray = useTodoStore((state) => state.todoArray);
   const updateTodoArray = useTodoStore((state) => state.updateTodoArray);
-
-  // const changeHandler = (e) => {
-  // e.preventDefault();
-  // setNewTask(() => e.target.value);
-  // };
-
-  // const submitHandler = (e) => {
-  // e.preventDefault();
-
-  // updating todoArray (Zustand)
-  // newTaskk.trim().length > 0 ? updateTodoArray(newTask) : "";
-
-  // setNewTask("");
-  // };
 
   return (
     <form

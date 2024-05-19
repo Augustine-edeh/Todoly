@@ -4,12 +4,8 @@ interface FilterProps {
   className: string;
 }
 const Filter = ({ className }: FilterProps) => {
-  // import { useTodoStore } from '../store';
-
-  // const { filter, setFilter, clearCompleted } = useTodoStore();
   const filter = useTodoStore((state) => state.filter);
   const setFilter = useTodoStore((state) => state.setFilter);
-  // const clearCompleted = useTodoStore((state) => state.clearCompleted);
 
   return (
     <div className={`${className} text-dark-grayish-blue-D select-none`}>
@@ -20,7 +16,6 @@ const Filter = ({ className }: FilterProps) => {
             filter === "all" ? "text-bright-blue" : ""
           }`}
           onClick={() => setFilter("all")}
-          // disabled={filter === "all"}
         >
           All
         </button>
@@ -28,7 +23,6 @@ const Filter = ({ className }: FilterProps) => {
           type="button"
           className="cursor-pointer focus:text-bright-blue hover:text-light-grayish-blue-D_"
           onClick={() => setFilter("active")}
-          // disabled={filter === "active"}
         >
           Active
         </button>
@@ -36,7 +30,6 @@ const Filter = ({ className }: FilterProps) => {
           type="button"
           className="cursor-pointer focus:text-bright-blue hover:text-light-grayish-blue-D_"
           onClick={() => setFilter("completed")}
-          // disabled={filter === "completed"}
         >
           Completed
         </button>
