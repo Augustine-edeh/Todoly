@@ -12,19 +12,19 @@ const Input = () => {
   //   const todoArray = useTodoStore((state) => state.todoArray);
   const updateTodoArray = useTodoStore((state) => state.updateTodoArray);
 
-  const changeHandler = (e) => {
-    // e.preventDefault();
-    // setNewTask(() => e.target.value);
-  };
+  // const changeHandler = (e) => {
+  // e.preventDefault();
+  // setNewTask(() => e.target.value);
+  // };
 
-  const submitHandler = (e) => {
-    e.preventDefault();
+  // const submitHandler = (e) => {
+  // e.preventDefault();
 
-    // updating todoArray (Zustand)
-    // newTaskk.trim().length > 0 ? updateTodoArray(newTask) : "";
+  // updating todoArray (Zustand)
+  // newTaskk.trim().length > 0 ? updateTodoArray(newTask) : "";
 
-    // setNewTask("");
-  };
+  // setNewTask("");
+  // };
 
   return (
     <form
@@ -46,7 +46,7 @@ const Input = () => {
         <label
           htmlFor="input"
           className="block h-full w-full border-[0.1px] border-very-dark-grayish-blue-L rounded-full cursor-pointer"
-          onClick={submitHandler}
+          // onClick={submitHandler}
         />
       </div>
     </form>
