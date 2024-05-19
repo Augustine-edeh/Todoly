@@ -9,6 +9,13 @@ import Input from "./Input";
 
 const Main = () => {
   const todoArray = useTodoStore((state) => state.todoArray);
+  const filter = useTodoStore((state) => state.filter);
+
+  const filteredTodos = todoArray.filter((todo) => {
+    if (filter === "active") return !todo.isCompleted;
+    if (filter === "completed") return todo.isCompleted;
+    return true;
+  });
 
   return (
     <main className="text-black dark:text-white">
@@ -17,8 +24,8 @@ const Main = () => {
 
         {/* <ul className="overflow-hidden bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 p-3 rounded-t "> */}
         <ul className="bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 flex flex-col gap-y- overflow-auto rounded-t scrollbar-thin scrollbar-track-very-dark-desaturated-blue-D scrollbar-thumb-slate-700/80">
-          {todoArray &&
-            todoArray.map((todo, index) => (
+          {filteredTodos &&
+            filteredTodos.map((todo, index) => (
               <TodoItem
                 key={index}
                 index={index}
