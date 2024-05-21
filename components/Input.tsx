@@ -18,7 +18,7 @@ const Input = () => {
     >
       <input
         type="text"
-        className="relative w-full rounded-md py-3 px-5 outline-none bg-very-light-gray-Lfsdl dark:bg-very-dark-desaturated-blue-D text-red-300 text-lg border-0 peer"
+        className="relative w-full rounded-md py-3 px-5 outline-none bg-very-light-gray-Lfsdl dark:bg-very-dark-desaturated-blue-D text-gray-600 dark:text-white/70 text-lg border-0 peer"
         placeholder=" Create a new todo..."
         onChange={(e) => setNewTaskk(e.target.value)}
         value={newTaskk}
