@@ -16,7 +16,7 @@ export default function Home() {
           <Main />
           <Filter
             className={
-              "md:hidden bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D rounded p-3 my-5 sm:my-0"
+              "md:hidden bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D rounded-md shadow-xl p-3 my-5 sm:my-0"
             }
           />
           <Footer />
