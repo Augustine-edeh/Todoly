@@ -13,7 +13,7 @@ const TodoItem = ({ index, todo, isCompleted }: todoItem) => {
   const handleCheckChange = (e: React.FormEvent) => {};
 
   return (
-    <li className="relative flex gap-x-5 items-center border-b-[1px] border-very-dark-grayish-blue-L px-4 py-5 select-none">
+    <li className="relative flex gap-x-5 items-center border-b-[1px] border-very-dark-grayish-blue-L px-4 py-5 select-none bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D rounded-lg shadow-lg">
       <input
         type="checkbox"
         id={String(index)}

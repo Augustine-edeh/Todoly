@@ -31,7 +31,7 @@ const Main = () => {
           axis="y"
           values={filteredTodos}
           onReorder={setTodoArray}
-          className="bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 flex flex-col gap-y- overflow-auto rounded- scrollbar-thin scrollbar-track-very-dark-desaturated-blue-D scrollbar-thumb-slate-700/80 rounded-t-md"
+          className="bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 flex flex-col gap-y-[0.23rem] overflow-auto rounded- scrollbar-thin scrollbar-track-very-dark-desaturated-blue-D scrollbar-thumb-slate-700/80 rounded-t-md"
         >
           {filteredTodos &&
             filteredTodos.map((todo, index) => (
