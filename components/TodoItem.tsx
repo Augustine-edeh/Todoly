@@ -1,5 +1,4 @@
 import { useTodoStore } from "@/store/todoStore";
-import React from "react";
 
 type todoItem = {
   index: number;

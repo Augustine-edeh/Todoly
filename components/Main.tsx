@@ -1,5 +1,7 @@
 "use client";
 
+import { Reorder } from "framer-motion"; // 103.8k (gzipped: 34k)
+
 import { useState } from "react";
 
 import TodoItem from "./TodoItem";
@@ -9,6 +11,9 @@ import Input from "./Input";
 
 const Main = () => {
   const todoArray = useTodoStore((state) => state.todoArray);
+  const updateTodoArray = useTodoStore((state) => state.updateTodoArray);
+  const setTodoArray = useTodoStore((state) => state.setTodoArray);
+
   const filter = useTodoStore((state) => state.filter);
 
   const filteredTodos = todoArray.filter((todo) => {
@@ -22,18 +27,24 @@ const Main = () => {
       <section className="flex flex-col gap-y-10">
         <Input />
 
-        {/* <ul className="overflow-hidden bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 p-3 rounded-t "> */}
-        <ul className="bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 flex flex-col gap-y- overflow-auto rounded-t scrollbar-thin scrollbar-track-very-dark-desaturated-blue-D scrollbar-thumb-slate-700/80">
+        <Reorder.Group
+          axis="y"
+          values={filteredTodos}
+          onReorder={setTodoArray}
+          className="bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 flex flex-col gap-y- overflow-auto rounded-t scrollbar-thin scrollbar-track-very-dark-desaturated-blue-D scrollbar-thumb-slate-700/80"
+        >
           {filteredTodos &&
             filteredTodos.map((todo, index) => (
-              <TodoItem
-                key={index}
-                index={index}
-                todo={todo}
-                isCompleted={todo.isCompleted}
-              />
+              <Reorder.Item value={todo} key={todo.id}>
+                <TodoItem
+                  key={todo.id}
+                  index={index}
+                  todo={todo}
+                  isCompleted={todo.isCompleted}
+                />
+              </Reorder.Item>
             ))}
-        </ul>
+        </Reorder.Group>
       </section>
       <InfoPanel />
     </main>

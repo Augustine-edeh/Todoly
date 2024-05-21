@@ -15,6 +15,7 @@ type TodoStore = {
   filter: Filter;
   setNewTask: (task: string) => void;
   updateTodoArray: () => void;
+  setTodoArray: (todos: Todo[]) => void; // New method for updating the todo array
   deleteTask: (index: number) => void;
   toggleIsCompleted: (id: number) => void;
   setFilter: (filter: Filter) => void;
@@ -37,6 +38,8 @@ export const useTodoStore = create<TodoStore>((set) => ({
       };
       return { todoArray: [newTodo, ...state.todoArray], newTask: "" };
     }),
+  setTodoArray: (todos: Todo[]) => set({ todoArray: todos }), // New method for setting todo array
+
   deleteTask: (index) =>
     set((state) => ({
       todoArray: state.todoArray.filter((_, i) => i !== index),
