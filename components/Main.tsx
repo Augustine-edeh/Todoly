@@ -2,8 +2,6 @@
 
 import { Reorder } from "framer-motion"; // 103.8k (gzipped: 34k)
 
-import { useState } from "react";
-
 import TodoItem from "./TodoItem";
 import InfoPanel from "./InfoPanel";
 import { useTodoStore } from "@/store/todoStore";

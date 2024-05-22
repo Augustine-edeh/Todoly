@@ -11,7 +11,7 @@ export default function Home() {
 
       {/* Bottom section */}
       <section className="flex bg-very-light-grayish-blue-L dark:bg-very-bark-blue-D h-2/3">
-        <div className="mx-auto w-[21rem] sm:w-[30rem] md:w-[43rem] lg:w-[50rem] flex flex-col sm:gap-y-10 -mt-48">
+        <div className="mx-auto w-[21rem] sm:w-[30rem] md:w-[43rem] lg:w-[50rem] flex flex-col sm:gap-y-10 -mt-52 lg:-mt-48">
           <Header />
           <Main />
           <Filter
