@@ -21,12 +21,12 @@ const InfoPanel = () => {
 
       <Filter className={"hidden md:block"} />
 
-      <div
-        className="cursor-pointer hover:text-light-grayish-blue-D_"
+      <button
+        className="cursor-pointer hover:text-very-dark-grayish-blue-L  dark:hover:text-light-grayish-blue-D_ focus:text-very-dark-grayish-blue-L dark:focus:text-light-grayish-blue-D_"
         onClick={clearCompleted}
       >
         Clear Completed
-      </div>
+      </button>
     </div>
   );
 };
