@@ -13,7 +13,7 @@ const Filter = ({ className }: FilterProps) => {
       <div className="flex justify-center gap-x-6">
         <button
           type={"button"}
-          className={`cursor-pointer focus:text-bright-blue hover:text-light-grayish-blue-D_ ${
+          className={`cursor-pointer focus:text-bright-blue text-very-dark-grayish-blue-L hover:text-very-bark-blue-D dark:hover:text-light-grayish-blue-D_ ${
             filter === "all" ? "text-bright-blue" : ""
           }`}
           onClick={() => setFilter("all")}
@@ -22,14 +22,14 @@ const Filter = ({ className }: FilterProps) => {
         </button>
         <button
           type="button"
-          className="cursor-pointer focus:text-bright-blue hover:text-light-grayish-blue-D_"
+          className="cursor-pointer focus:text-bright-blue text-very-dark-grayish-blue-L hover:text-very-bark-blue-D dark:hover:text-light-grayish-blue-D_"
           onClick={() => setFilter("active")}
         >
           Active
         </button>
         <button
           type="button"
-          className="cursor-pointer focus:text-bright-blue hover:text-light-grayish-blue-D_"
+          className="cursor-pointer focus:text-bright-blue text-very-dark-grayish-blue-L hover:text-very-bark-blue-D dark:hover:text-light-grayish-blue-D_"
           onClick={() => setFilter("completed")}
         >
           Completed
