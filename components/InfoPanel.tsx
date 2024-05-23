@@ -10,8 +10,8 @@ const InfoPanel = () => {
   ).length;
 
   return (
-    <div className="flex justify-between mt-auto text-dark-grayish-blue-D bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D p-6 border-t-[0.1px] border-very-dark-grayish-blue-L rounded-b-md shadow-xl select-none">
-      <div>
+    <div className="flex justify-between mt-auto text-dark-grayish-blue-D dark:text-very-dark-grayish-blue-L bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D p-6 border-t-[0.1px] border-very-dark-grayish-blue-L rounded-b-md shadow-xl select-none">
+      <div className="">
         {unCompletedTaskCount === 1
           ? "1 item left"
           : unCompletedTaskCount > 1
