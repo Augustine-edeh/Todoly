@@ -22,7 +22,7 @@ const Main = () => {
 
   return (
     <main className="text-black dark:text-white">
-      <section className="flex flex-col gap-y-10">
+      <section className="flex flex-col sm:gap-y-10 gap-y-9">
         <Input />
 
         <Reorder.Group
