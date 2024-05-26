@@ -29,7 +29,7 @@ const Main = () => {
           axis="y"
           values={filteredTodos}
           onReorder={setTodoArray}
-          className="bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 flex flex-col gap-y-[0.23rem] overflow-auto scrollbar-thin scrollbar-track-very-light-gray-L dark:scrollbar-track-very-dark-desaturated-blue-D scrollbar-thumb-gray-300/70 dark:scrollbar-thumb-slate-700/80 rounded-t-md"
+          className="bg-very-light-gray-L dark:bg-very-dark-desaturated-blue-D min-h-96 max-h-96 flex flex-col gap-y-[0.23rem] overflow-auto scrollbar-thin scrollbar-track-very-light-gray-L dark:scrollbar-track-very-dark-desaturated-blue-D scrollbar-thumb-gray-300/70 dark:scrollbar-thumb-slate-700/80 rounded-t-md px-1 md:px-2"
         >
           {filteredTodos &&
             filteredTodos.map((todo, index) => (
