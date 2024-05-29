@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { DragControls } from "framer-motion";
 
-const DragHandle = ({ controls }) => {
-  const [isGrabbing, setIsGrabbing] = useState(false);
+interface DragHandleProps {
+  controls: DragControls;
+}
 
+const DragHandle = ({ controls }: DragHandleProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
