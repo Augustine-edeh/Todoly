@@ -8,14 +8,15 @@ interface Todo {
   task: string;
   isCompleted: boolean;
 }
-type todoItem = {
+
+type TodoItemProps = {
   index: number;
-  todo: { id: number; task: string; isCompleted: boolean };
+  todo: Todo;
   isCompleted: boolean;
-  value: Todo[];
+  value: Todo;
 };
 
-const TodoItem = ({ index, todo, isCompleted, value }: todoItem) => {
+const TodoItem = ({ index, todo, isCompleted, value }: TodoItemProps) => {
   const deleteTask = useTodoStore((state) => state.deleteTask);
   const toggleIsCompleted = useTodoStore((state) => state.toggleIsCompleted);
 
