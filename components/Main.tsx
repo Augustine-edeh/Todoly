@@ -1,6 +1,6 @@
 "use client";
 
-import { Reorder } from "framer-motion"; // 103.8k (gzipped: 34k)
+import { Reorder, useDragControls } from "framer-motion"; // 103.8k (gzipped: 34k)
 
 import TodoItem from "./TodoItem";
 import InfoPanel from "./InfoPanel";
@@ -20,6 +20,8 @@ const Main = () => {
     return true;
   });
 
+  const controls = useDragControls();
+
   return (
     <main className="text-black dark:text-white">
       <section className="flex flex-col sm:gap-y-10 gap-y-9">
@@ -33,14 +35,13 @@ const Main = () => {
         >
           {filteredTodos &&
             filteredTodos.map((todo, index) => (
-              <Reorder.Item value={todo} key={todo.id}>
-                <TodoItem
-                  key={todo.id}
-                  index={index}
-                  todo={todo}
-                  isCompleted={todo.isCompleted}
-                />
-              </Reorder.Item>
+              <TodoItem
+                key={todo.id}
+                index={index}
+                todo={todo}
+                isCompleted={todo.isCompleted}
+                value={todo}
+              />
             ))}
         </Reorder.Group>
       </section>
