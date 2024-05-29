@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 type Filter = "all" | "active" | "completed";
 
@@ -22,37 +23,45 @@ type TodoStore = {
   clearCompleted: () => void;
 };
 
-export const useTodoStore = create<TodoStore>((set) => ({
-  todoArray: [],
-  newTask: "",
-  filter: "all",
-  // FIXME: incorrect state updating logic here
-  setNewTask: (task: string) => set({ newTask: task }),
-  updateTodoArray: () =>
-    set((state) => {
-      if (state.newTask.trim() === "") return state;
-      const newTodo: Todo = {
-        id: Date.now(),
-        task: state.newTask,
-        isCompleted: false,
-      };
-      return { todoArray: [newTodo, ...state.todoArray], newTask: "" };
-    }),
-  setTodoArray: (todos: Todo[]) => set({ todoArray: todos }), // New method for setting todo array
+export const useTodoStore = create<TodoStore>()(
+  persist(
+    (set) => ({
+      todoArray: [],
+      newTask: "",
+      filter: "all",
+      // FIXME: incorrect state updating logic here
+      setNewTask: (task: string) => set({ newTask: task }),
+      updateTodoArray: () =>
+        set((state) => {
+          if (state.newTask.trim() === "") return state;
+          const newTodo: Todo = {
+            id: Date.now(),
+            task: state.newTask,
+            isCompleted: false,
+          };
+          return { todoArray: [newTodo, ...state.todoArray], newTask: "" };
+        }),
+      setTodoArray: (todos: Todo[]) => set({ todoArray: todos }), // New method for setting todo array
 
-  deleteTask: (index) =>
-    set((state) => ({
-      todoArray: state.todoArray.filter((_, i) => i !== index),
-    })),
-  toggleIsCompleted: (id: number) =>
-    set((state) => ({
-      todoArray: state.todoArray.map((todo) =>
-        todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
-      ),
-    })),
-  setFilter: (filter: Filter) => set({ filter }),
-  clearCompleted: () =>
-    set((state) => ({
-      todoArray: state.todoArray.filter((todo) => !todo.isCompleted),
-    })),
-}));
+      deleteTask: (index) =>
+        set((state) => ({
+          todoArray: state.todoArray.filter((_, i) => i !== index),
+        })),
+      toggleIsCompleted: (id: number) =>
+        set((state) => ({
+          todoArray: state.todoArray.map((todo) =>
+            todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
+          ),
+        })),
+      setFilter: (filter: Filter) => set({ filter }),
+      clearCompleted: () =>
+        set((state) => ({
+          todoArray: state.todoArray.filter((todo) => !todo.isCompleted),
+        })),
+    }),
+    {
+      name: "todoly-storage",
+      getStorage: () => localStorage,
+    }
+  )
+);
