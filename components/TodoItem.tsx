@@ -63,7 +63,9 @@ const TodoItem = ({ index, todo, isCompleted, value }: TodoItemProps) => {
         </svg>
 
         {/* drag handle */}
-        <DragHandle controls={controls} />
+        <div className="hidden lg:flex">
+          <DragHandle controls={controls} />
+        </div>
 
         {/* delete icon */}
         <svg
