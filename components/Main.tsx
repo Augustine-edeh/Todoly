@@ -9,6 +9,7 @@ import Input from "./Input";
 
 const Main = () => {
   const todoArray = useTodoStore((state) => state.todoArray);
+  const isEmptyEntry = useTodoStore((state) => state.isEmptyEntry);
   const updateTodoArray = useTodoStore((state) => state.updateTodoArray);
   const setTodoArray = useTodoStore((state) => state.setTodoArray);
 
@@ -25,7 +26,13 @@ const Main = () => {
   return (
     <main className="text-black dark:text-white">
       <section className="flex flex-col sm:gap-y-10 gap-y-9">
-        <Input />
+        <div className="">
+          <Input />
+
+          {isEmptyEntry && (
+            <p className="text-[#FFC107]">Kindly enter a task</p>
+          )}
+        </div>
 
         <Reorder.Group
           axis="y"

@@ -3,7 +3,6 @@ import { persist } from "zustand/middleware";
 
 type Filter = "all" | "active" | "completed";
 
-// types.ts
 interface Todo {
   id: number;
   task: string;
@@ -11,12 +10,14 @@ interface Todo {
 }
 
 type TodoStore = {
+  isEmptyEntry: boolean;
   todoArray: Todo[];
   newTask: string;
   filter: Filter;
+  setIsEmptyEntry: (bol: boolean) => void;
   setNewTask: (task: string) => void;
   updateTodoArray: () => void;
-  setTodoArray: (todos: Todo[]) => void; // New method for updating the todo array
+  setTodoArray: (todos: Todo[]) => void;
   deleteTask: (index: number) => void;
   toggleIsCompleted: (id: number) => void;
   setFilter: (filter: Filter) => void;
@@ -26,22 +27,34 @@ type TodoStore = {
 export const useTodoStore = create<TodoStore>()(
   persist(
     (set) => ({
+      isEmptyEntry: false,
       todoArray: [],
       newTask: "",
       filter: "all",
-      // FIXME: incorrect state updating logic here
+
+      setIsEmptyEntry: (bol: boolean) => set({ isEmptyEntry: bol }),
       setNewTask: (task: string) => set({ newTask: task }),
+
       updateTodoArray: () =>
         set((state) => {
-          if (state.newTask.trim() === "") return state;
+          // Check for empty task
+          if (state.newTask.trim() === "") {
+            return { isEmptyEntry: true };
+          }
+
+          // Clear the empty entry state
+          set({ isEmptyEntry: false });
+
           const newTodo: Todo = {
             id: Date.now(),
             task: state.newTask,
             isCompleted: false,
           };
+
+          // Add the new task to the array and reset the newTask
           return { todoArray: [newTodo, ...state.todoArray], newTask: "" };
         }),
-      setTodoArray: (todos: Todo[]) => set({ todoArray: todos }), // New method for setting todo array
+      setTodoArray: (todos: Todo[]) => set({ todoArray: todos }),
 
       deleteTask: (index) =>
         set((state) => ({
